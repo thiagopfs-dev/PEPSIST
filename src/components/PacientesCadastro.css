@@ -1,0 +1,244 @@
+/* src/components/PacientesCadastro.css */
+.pacientes-cadastro-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Toolbar (busca e botão novo) */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-input {
+  padding: 10px 15px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1em;
+  min-width: 300px;
+  flex-grow: 1;
+}
+
+.btn-new {
+  background-color: #3182ce; /* Azul */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-new:hover {
+  background-color: #2c5282;
+}
+
+/* Lista de Pacientes */
+.pacientes-list {
+  overflow-x: auto;
+}
+
+.pacientes-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.pacientes-list th,
+.pacientes-list td {
+  border: 1px solid #e2e8f0;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.95em;
+  vertical-align: middle;
+}
+
+.pacientes-list th {
+  background-color: #f8fafc;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.pacientes-list tr:nth-child(even) {
+  background-color: #f9fafd;
+}
+
+.pacientes-list tr:hover {
+  background-color: #eef1f5;
+}
+
+.btn-action {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.btn-action:hover { background-color: #e2e8f0; }
+.btn-edit { color: #3182ce; }
+.btn-delete { color: #e53e3e; }
+
+/* Status Badge */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+.status-ativo { background-color: #c6f6d5; color: #2f855a; }
+.status-inativo { background-color: #fed7d7; color: #c53030; }
+.status-arquivado { background-color: #e2e8f0; color: #4a5568; }
+
+
+.no-results-message {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.1em;
+  color: #718096;
+}
+
+/* Formulário de Paciente */
+.paciente-form-container {
+  padding: 25px;
+  background-color: #f9fafd;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.paciente-form-container h3 {
+  font-size: 1.6em;
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.paciente-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px 20px;
+}
+
+.paciente-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.paciente-form .form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.paciente-form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #4a5568;
+}
+
+.paciente-form input[type="text"],
+.paciente-form input[type="date"],
+.paciente-form input[type="tel"],
+.paciente-form input[type="email"],
+.paciente-form select,
+.paciente-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: #fff;
+  width: 100%;
+}
+
+.paciente-form textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.paciente-form input:focus,
+.paciente-form select:focus,
+.paciente-form textarea:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+input:read-only, textarea:read-only {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.form-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.btn-save {
+  background-color: #2f855a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-save:hover {
+  background-color: #276749;
+}
+
+.btn-cancel {
+  background-color: #718096;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-cancel:hover {
+  background-color: #4a5568;
+}
+
+/* Estilos para o indicador de loading do CPF */
+.cpf-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cpf-input-wrapper input[type="text"] {
+    flex-grow: 1;
+}
+
+.cpf-loading-indicator {
+  /* margin-left: 10px; */ /* Removido para usar posicionamento absoluto se necessário ou deixar o flex cuidar */
+  font-size: 0.9em;
+  color: #3182ce;
+  animation: spin 1s linear infinite;
+  padding-left: 10px; /* Adiciona um pouco de espaço */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

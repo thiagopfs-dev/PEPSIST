@@ -1,0 +1,43 @@
+/* Adicionar/Modificar em src/components/AtendimentoScreen.css */
+
+/* ... (estilos existentes para .atendimento-screen-wrapper, .atendimento-header, .back-button) ... */
+
+.atendimento-subnav {
+  display: flex;
+  justify-content: center; /* Ou flex-start se preferir */
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e7ff;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.atendimento-subnav button {
+  padding: 10px 18px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #4a5568;
+  background-color: #fff;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.atendimento-subnav button:hover {
+  background-color: #e9edf2;
+  border-color: #adb5bd;
+}
+
+.atendimento-subnav button.active {
+  background-color: #3182ce; /* Azul para aba ativa */
+  color: white;
+  border-color: #3182ce;
+  box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+.atendimento-content-area { /* Antigo .atendimento-content */
+  background-color: transparent; /* O conteúdo interno terá seu próprio background */
+  padding: 0; /* Remover padding se o conteúdo interno já tiver */
+  /* min-height: 300px; Mantido pelo wrapper principal */
+}

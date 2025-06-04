@@ -1,0 +1,202 @@
+/* src/components/ConsultaMedica.css */
+.consulta-medica-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.consulta-medica-container h4 {
+  font-size: 1.4em;
+  color: #374151;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.tabela-consulta-espera {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabela-consulta-espera th,
+.tabela-consulta-espera td {
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+
+.tabela-consulta-espera th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+.tabela-consulta-espera tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.risco-badge {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+}
+.risco-emergência-vermelho { background-color: #ef4444; } /* Vermelho */
+.risco-muito-urgente-laranja { background-color: #f97316; } /* Laranja */
+.risco-urgente-amarelo { background-color: #eab308; } /* Amarelo */
+.risco-pouco-urgente-verde { background-color: #22c55e; } /* Verde */
+.risco-não-urgente-azul { background-color: #3b82f6; } /* Azul */
+.risco-na { background-color: #9ca3af; } /* Cinza */
+
+
+.btn-action-consulta {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.85em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-iniciar-consulta {
+  background-color: #16a34a; /* Verde */
+}
+.btn-iniciar-consulta:hover {
+  background-color: #15803d;
+}
+
+.info-message-consulta {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.05em;
+  color: #6b7280;
+}
+
+/* Área de Consulta Ativa */
+.area-consulta-ativa {
+  margin-top: 15px;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.consulta-header-paciente h3 {
+  font-size: 1.7em;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.paciente-info-resumo {
+    font-size: 0.85em;
+    color: #4b5563;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e5e7eb;
+}
+.paciente-info-resumo span {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #e5e7eb;
+}
+.paciente-info-resumo span:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+
+.form-consulta-medica .form-section-consulta {
+  margin-bottom: 20px;
+}
+
+.form-consulta-medica .form-section-consulta label,
+.form-consulta-medica .conduta-section h4 {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 1em; /* Ajustado para ser um pouco maior */
+  color: #374151;
+}
+.form-consulta-medica .conduta-section h4 {
+    font-size: 1.1em;
+    color: #1d4ed8; /* Azul para destacar a seção de conduta */
+    padding-bottom: 5px;
+    border-bottom: 1px solid #bfdbfe;
+    margin-bottom: 15px;
+}
+.form-consulta-medica .conduta-section .form-group-consulta {
+    margin-bottom: 15px;
+}
+.form-consulta-medica .conduta-section .form-group-consulta label {
+    font-size: 0.9em; /* Labels dentro de conduta um pouco menores */
+    font-weight: 500;
+}
+
+
+.form-consulta-medica textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95em;
+  line-height: 1.5;
+  background-color: #fff;
+  resize: vertical;
+}
+
+.form-consulta-medica textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+.consulta-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.consulta-actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-salvar-parcial-consulta {
+  background-color: #3b82f6; /* Azul */
+  color: white;
+}
+.btn-salvar-parcial-consulta:hover {
+  background-color: #2563eb;
+}
+
+.btn-finalizar-consulta {
+  background-color: #16a34a; /* Verde */
+  color: white;
+}
+.btn-finalizar-consulta:hover {
+  background-color: #15803d;
+}
+
+.btn-voltar-lista-consulta {
+  background-color: #6b7280; /* Cinza */
+  color: white;
+}
+.btn-voltar-lista-consulta:hover {
+  background-color: #4b5563;
+}

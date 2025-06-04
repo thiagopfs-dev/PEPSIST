@@ -1,0 +1,250 @@
+/* src/components/MainScreen.css */
+
+/* Font Import (se não estiver no seu index.css ou App.css) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.main-screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f4f8; /* Um azul acinzentado bem claro */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-header {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #e0e0e0;
+  /* --- ESTILOS PARA FIXAR O CABEÇALHO --- */
+  position: sticky; /* Faz o cabeçalho ficar fixo */
+  top: 0;           /* No topo da viewport */
+  z-index: 1000;    /* Garante que fique acima de outros conteúdos */
+}
+
+.erp-logo-main {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #2c5282; /* Azul corporativo mais escuro */
+}
+
+.erp-logo-plus-main {
+  color: #3182ce; /* Azul um pouco mais claro para o "+" */
+}
+
+.erp-subtitle-main {
+  font-size: 0.6em;
+  font-weight: 400;
+  color: #718096; /* Cinza para o subtítulo */
+  display: block; /* Para ficar abaixo */
+  margin-top: -5px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.95em;
+  color: #4a5568;
+}
+
+.logout-button {
+  padding: 8px 15px;
+  background-color: #e53e3e; /* Vermelho para Sair */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #c53030;
+}
+
+.view-tabs {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #e9edf2; /* Cor de fundo para a barra de abas */
+  border-bottom: 1px solid #d1d9e6;
+  /* --- ESTILOS PARA FIXAR AS ABAS --- */
+  position: sticky; /* Faz as abas ficarem fixas */
+  /* Ajuste este valor para ser a altura do seu .main-header.
+     Se o .main-header tiver 70px de altura (padding + font-size + etc), use top: 70px; */
+  top: 70px;        /* Distância do topo da viewport, ABAIXO do .main-header (ajuste se a altura do header mudar) */
+  z-index: 999;     /* Abaixo do .main-header, mas acima do conteúdo principal */
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #4a5568;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent; /* Borda inferior para indicar aba ativa */
+  cursor: pointer;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.tab-button:hover {
+  color: #2c5282;
+}
+
+.tab-button.active {
+  color: #2c5282; /* Cor para aba ativa */
+  border-bottom-color: #2c5282; /* Borda ativa */
+}
+
+.modules-container {
+  flex-grow: 1; /* Faz o main ocupar o espaço restante */
+  padding: 30px;
+  text-align: center;
+  /* Ajuste de padding para compensar header e abas fixas */
+  /* (altura do header + altura das abas + algum respiro) */
+  /* Ex: Se header + padding = ~70px, e tabs + padding = ~50px => 70 + 50 + 20 (respiro) = 140px */
+  padding-top: 30px; /* Este padding é do container em si, o espaço para os elementos sticky é gerenciado por eles estarem fora do fluxo direto de scroll abaixo deles */
+  /* O conteúdo dentro de modules-container naturalmente começará após as abas se elas forem sticky e tiverem um top definido */
+  /* Para garantir que o PRIMEIRO elemento DENTRO de .modules-container não fique sob as abas,
+     se as abas tiverem, por exemplo, 50px de altura e estiverem grudadas a 70px do topo,
+     o conteúdo abaixo delas começa naturalmente.
+     Mas se você quiser um espaço VISUAL entre o fim das abas e o título "Módulos", aumente este padding-top.
+     Considerando que .main-header (70px) + .view-tabs (~50px) = 120px.
+     Um padding-top: 30px aqui significa que o conteúdo do modules-container começará 30px abaixo das abas.
+     Vamos revisar para garantir que o conteúdo não comece por baixo:
+     o .modules-container precisa de um padding que leve em conta a altura TOTAL dos elementos sticky ACIMA dele.
+     Se .main-header tem ~70px e .view-tabs tem ~50px (total 120px grudado no topo), então
+     o conteúdo do modules-container não deve ter um padding-top simples de 30px,
+     mas sim um que garanta que o H2 e o grid não comecem sob os elementos sticky.
+     A maneira mais simples é deixar o padding normal e garantir que os elementos sticky
+     não causem sobreposição devido ao z-index e ao seu posicionamento.
+     Contudo, se você notar que o título H2 está muito colado ou embaixo das abas,
+     aumentar o padding-top do .modules-container é uma solução.
+     Para um efeito visual bom:
+  */
+  padding-top: 20px; /* Espaço entre o fim das abas e o título "Módulos" */
+  /* O espaçamento real para os elementos sticky é criado pelo seu 'top' e pelo fluxo do documento */
+}
+
+
+.modules-container h2 {
+  font-size: 2em;
+  color: #2d3748;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 10px; /* Espaço para o placeholder do D&D */
+}
+
+.module-card {
+  background-color: #ffffff;
+  padding: 25px;
+  padding-top: 50px; /* Mais espaço no topo para o botão de favorito */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Transição mais suave */
+  cursor: grab; /* Indica que pode ser arrastado (para D&D) */
+  border: 1px solid #e2e8f0;
+  position: relative; /* Para o botão de favorito */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Para garantir que o conteúdo do card não ultrapasse as bordas arredondadas */
+}
+
+.module-card:hover:not(.dragging) { /* Não aplica hover se estiver arrastando */
+  transform: translateY(-6px) scale(1.02); /* Efeito de elevação e leve zoom */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: #ffc107; /* Estrela amarela */
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+  z-index: 10; /* Para ficar acima de outros elementos do card */
+  transition: transform 0.2s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.2); /* Aumenta um pouco a estrela no hover */
+}
+
+.module-icon {
+  font-size: 2.8em;
+  margin-bottom: 12px;
+  line-height: 1;
+  color: #3182ce; /* Cor para os ícones */
+}
+
+.module-name {
+  font-size: 1.25em;
+  color: #2c5282;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.module-card p {
+  font-size: 0.85em;
+  color: #718096;
+  flex-grow: 1; /* Para empurrar o nome para cima se o card tiver alturas diferentes */
+  line-height: 1.4;
+}
+
+.empty-favorites-message {
+  text-align: center;
+  font-size: 1.1em;
+  color: #718096;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #e2e8f0;
+  color: #4a5568;
+  font-size: 0.9em;
+  border-top: 1px solid #cbd5e0;
+  margin-top: auto; /* Para empurrar o rodapé para baixo se o conteúdo for pequeno */
+}
+
+/* Estilos para Drag and Drop */
+.modules-grid.dragging-over {
+  background-color: #e0eaff; /* Um azul bem claro para indicar área de drop */
+  outline: 2px dashed #a3bffa; /* Borda tracejada */
+}
+
+.module-card.dragging {
+  opacity: 0.9;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important; /* !important para sobrescrever o hover */
+  transform: scale(1.05) rotate(2deg) !important; /* Efeito de "pegar" o card */
+  border-color: #3182ce;
+  cursor: grabbing; /* Feedback de que está arrastando */
+}

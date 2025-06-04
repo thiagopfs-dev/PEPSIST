@@ -1,0 +1,84 @@
+.cadastro-screen-wrapper {
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafd;
+  min-height: calc(100vh - 70px); /* Considerando um header principal */
+}
+
+.cadastro-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cadastro-header h1 {
+  font-size: 2em;
+  color: #2d3748;
+  font-weight: 600;
+  margin: 0;
+  flex-grow: 1; /* Para empurrar o título se o botão estiver presente */
+  text-align: center; /* Centraliza se o botão não ocupar espaço */
+}
+
+.back-button {
+  background: none;
+  border: 1px solid #cbd5e0;
+  color: #4a5568;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  margin-right: 20px; /* Espaço entre o botão e o título */
+}
+
+.back-button:hover {
+  background-color: #e2e8f0;
+  color: #2d3748;
+}
+
+
+.cadastro-subnav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 15px;
+  flex-wrap: wrap; /* Para telas menores */
+}
+
+.cadastro-subnav button {
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #4a5568;
+  background-color: #fff;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cadastro-subnav button:hover {
+  background-color: #e9edf2;
+  border-color: #adb5bd;
+}
+
+.cadastro-subnav button.active {
+  background-color: #3182ce;
+  color: white;
+  border-color: #3182ce;
+  box-shadow: 0 2px 4px rgba(49, 130, 206, 0.2);
+}
+
+.cadastro-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-height: 300px; /* Para dar um espaço visual */
+  font-size: 1.1em;
+  color: #333;
+}
